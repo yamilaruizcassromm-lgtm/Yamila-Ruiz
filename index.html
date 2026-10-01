@@ -8,6 +8,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css.css">
+
+  <!-- SDK oficial de Supabase JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
@@ -22,7 +25,7 @@
         <a href="#servicios" class="nav-link">Servicios</a>
         <a href="#agendar" class="nav-link">Reservar Turno</a>
         <a href="#mis-turnos" class="nav-link">Mis Turnos</a>
-        <a href="#cql-panel" class="nav-link cql-badge"><i class="fa-solid fa-database"></i> Panel CQL</a>
+        <a href="#supabase-panel" class="nav-link cql-badge"><i class="fa-solid fa-database"></i> Panel Supabase</a>
       </nav>
     </div>
   </header>
@@ -125,7 +128,7 @@
 
           </div>
 
-          <button type="submit" class="btn btn-block btn-primary">
+          <button type="submit" id="submitBtn" class="btn btn-block btn-primary">
             <i class="fa-solid fa-check"></i> Confirmar Turno
           </button>
         </form>
@@ -138,42 +141,42 @@
     <div class="container">
       <h2 class="section-title">Mis Turnos Agendados</h2>
       <div id="turnosList" class="turnos-grid">
-        <!-- Se llena con JS -->
+        <!-- Creado dinámicamente desde JS -->
       </div>
     </div>
   </section>
 
-  <!-- Panel de Consulta CQL -->
-  <section id="cql-panel" class="cql-section">
+  <!-- Panel de Consulta Supabase (PostgreSQL) -->
+  <section id="supabase-panel" class="cql-section">
     <div class="container">
       <div class="cql-card">
         <div class="cql-header">
           <i class="fa-solid fa-terminal"></i>
           <div>
-            <h3>Consola de Consulta CQL (Cassandra Query Language)</h3>
-            <p>Visualiza cómo se insertan y consultan las reservas en la base de datos CQL.</p>
+            <h3>Consola de Consulta Supabase (PostgreSQL)</h3>
+            <p>Visualiza en tiempo real los datos consultados desde Supabase mediante el SDK cliente.</p>
           </div>
         </div>
 
         <div class="cql-code-block">
-          <span class="cql-comment">-- Consulta generada para obtener todos los turnos registrados:</span>
-          <code id="cqlQueryDisplay">SELECT appointment_id, patient_name, service, appointment_date, appointment_time, status FROM optica.appointments_by_date;</code>
+          <span class="cql-comment">-- Consulta SQL equivalente ejecutada dinámicamente por Supabase JS:</span>
+          <code id="sqlQueryDisplay">SELECT id, patient_name, patient_dni, service_type, appointment_date, appointment_time, status FROM public.appointments ORDER BY appointment_date, appointment_time ASC;</code>
         </div>
 
         <div class="cql-table-wrapper">
           <table class="cql-table">
             <thead>
               <tr>
-                <th>appointment_id (UUID)</th>
+                <th>id (UUID)</th>
                 <th>patient_name</th>
-                <th>dni</th>
-                <th>service</th>
+                <th>patient_dni</th>
+                <th>service_type</th>
                 <th>appointment_date</th>
                 <th>appointment_time</th>
                 <th>status</th>
               </tr>
             </thead>
-            <tbody id="cqlTableBody">
+            <tbody id="sqlTableBody">
               <!-- Creado dinámicamente desde JS -->
             </tbody>
           </table>
