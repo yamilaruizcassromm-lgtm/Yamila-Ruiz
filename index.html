@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Óptica Visión+ - Agendamiento de Turnos</title>
+  <!-- Google Fonts & FontAwesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+  <!-- Header & Nav -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-glasses logo-icon"></i>
+        <span>Óptica Visión<span class="logo-plus">+</span></span>
+      </a>
+      <nav class="nav-menu">
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#agendar" class="nav-link">Reservar Turno</a>
+        <a href="#mis-turnos" class="nav-link">Mis Turnos</a>
+        <a href="#cql-panel" class="nav-link cql-badge"><i class="fa-solid fa-database"></i> Panel CQL</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Cuida tu vista con los mejores profesionales</h1>
+        <p>Agenda tu cita para examen visual, adaptación de lentes de contacto o renovación de armazones en pocos minutos.</p>
+        <a href="#agendar" class="btn btn-primary"><i class="fa-regular fa-calendar-check"></i> Agendar Turno Ahora</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&q=80&w=600" alt="Examen de vista en Óptica">
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="services-section">
+    <div class="container">
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fa-solid fa-eye service-icon"></i>
+          <h3>Examen Visual Completo</h3>
+          <p>Evaluación preventiva y graduación exacta con tecnología digital de última generación.</p>
+        </div>
+        <div class="service-card">
+          <i class="fa-solid fa-circle-dot service-icon"></i>
+          <h3>Lentes de Contacto</h3>
+          <p>Prueba, adaptación personalizada y capacitación para el uso de lentes blandos y tóricos.</p>
+        </div>
+        <div class="service-card">
+          <i class="fa-solid fa-screwdriver-wrench service-icon"></i>
+          <h3>Mantenimiento y Ajuste</h3>
+          <p>Ajuste de armazones, cambio de plaquetas y limpieza ultrasónica totalmente gratuita.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario de Agendamiento -->
+  <section id="agendar" class="booking-section">
+    <div class="container">
+      <div class="booking-card">
+        <h2 class="section-title">Reserva tu Cita</h2>
+        <p class="section-subtitle">Completa el formulario para agendar tu turno en la óptica</p>
+
+        <form id="bookingForm" class="booking-form">
+          <div class="form-grid">
+            
+            <div class="form-group">
+              <label for="fullName"><i class="fa-solid fa-user"></i> Nombre Completo *</label>
+              <input type="text" id="fullName" required placeholder="Ej: María González">
+            </div>
+
+            <div class="form-group">
+              <label for="dni"><i class="fa-solid fa-id-card"></i> Documento / DNI *</label>
+              <input type="text" id="dni" required placeholder="Ej: 12345678">
+            </div>
+
+            <div class="form-group">
+              <label for="email"><i class="fa-solid fa-envelope"></i> Correo Electrónico *</label>
+              <input type="email" id="email" required placeholder="tu@email.com">
+            </div>
+
+            <div class="form-group">
+              <label for="phone"><i class="fa-solid fa-phone"></i> Teléfono / WhatsApp *</label>
+              <input type="tel" id="phone" required placeholder="Ej: +595 981 123456">
+            </div>
+
+            <div class="form-group">
+              <label for="serviceType"><i class="fa-solid fa-briefcase"></i> Tipo de Servicio *</label>
+              <select id="serviceType" required>
+                <option value="">Selecciona un servicio</option>
+                <option value="Examen de la Vista">Examen de la Vista</option>
+                <option value="Adaptación Lentes de Contacto">Adaptación Lentes de Contacto</option>
+                <option value="Asesoría para Armazones">Asesoría para Armazones</option>
+                <option value="Ajuste y Reparación">Ajuste y Reparación</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="appointmentDate"><i class="fa-solid fa-calendar"></i> Fecha *</label>
+              <input type="date" id="appointmentDate" required>
+            </div>
+
+            <div class="form-group form-full">
+              <label for="appointmentTime"><i class="fa-solid fa-clock"></i> Horario Disponible *</label>
+              <select id="appointmentTime" required>
+                <option value="">Primero selecciona una fecha</option>
+              </select>
+            </div>
+
+            <div class="form-group form-full">
+              <label for="notes"><i class="fa-solid fa-comment-dots"></i> Notas Adicionales (Opcional)</label>
+              <textarea id="notes" rows="3" placeholder="Si tienes alguna condición o preferencia en particular, indícala aquí..."></textarea>
+            </div>
+
+          </div>
+
+          <button type="submit" class="btn btn-block btn-primary">
+            <i class="fa-solid fa-check"></i> Confirmar Turno
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mis Turnos Registrados -->
+  <section id="mis-turnos" class="turnos-section">
+    <div class="container">
+      <h2 class="section-title">Mis Turnos Agendados</h2>
+      <div id="turnosList" class="turnos-grid">
+        <!-- Se llena con JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Panel de Consulta CQL -->
+  <section id="cql-panel" class="cql-section">
+    <div class="container">
+      <div class="cql-card">
+        <div class="cql-header">
+          <i class="fa-solid fa-terminal"></i>
+          <div>
+            <h3>Consola de Consulta CQL (Cassandra Query Language)</h3>
+            <p>Visualiza cómo se insertan y consultan las reservas en la base de datos CQL.</p>
+          </div>
+        </div>
+
+        <div class="cql-code-block">
+          <span class="cql-comment">-- Consulta generada para obtener todos los turnos registrados:</span>
+          <code id="cqlQueryDisplay">SELECT appointment_id, patient_name, service, appointment_date, appointment_time, status FROM optica.appointments_by_date;</code>
+        </div>
+
+        <div class="cql-table-wrapper">
+          <table class="cql-table">
+            <thead>
+              <tr>
+                <th>appointment_id (UUID)</th>
+                <th>patient_name</th>
+                <th>dni</th>
+                <th>service</th>
+                <th>appointment_date</th>
+                <th>appointment_time</th>
+                <th>status</th>
+              </tr>
+            </thead>
+            <tbody id="cqlTableBody">
+              <!-- Creado dinámicamente desde JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
